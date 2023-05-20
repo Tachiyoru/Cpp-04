@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 13:45:10 by sleon             #+#    #+#             */
-/*   Updated: 2023/05/10 13:11:47 by sleon            ###   ########.fr       */
+/*   Updated: 2023/05/20 14:18:25 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	main( void )
 		else
 			animals[i] = new Cat();
 		std::cout << animals[i]->getType() << std::endl;
+		std::cout << std::endl;
 	}
 	brain = animals[3]->getBrain();
 	brain->ideas[0] = "fuck manu";
@@ -42,24 +43,27 @@ int	main( void )
 	animals[5]->getBrain()->ideas[2] = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
 	std::cout << animals[3]->getBrain()->ideas[2] << std::endl;
 	std::cout << animals[5]->getBrain()->ideas[2] << std::endl;
-
+	std::cout << std::endl;
 
 	for (int i = 0; i < 8; i++)
 		delete animals[i];
+	std::cout << std::endl;
 
 	Dog dog1;
 	Dog dog2;
 
-	std::cout<<std::endl<<std::endl;
+	std::cout<<std::endl;
 	dog1.getBrain()->ideas[12]="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
 	std::cout << dog1.getBrain()->ideas[12] << std::endl;
 
 	dog2 = dog1;
+	dog1.getBrain()->ideas[12] = "Pourquoi ?";
 	std::cout << dog2.getBrain()->ideas[12] << std::endl;
 	std::cout<<std::endl;
 
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
-	delete j;
+	delete j;//should not create a leak
 	delete i;
+
 }

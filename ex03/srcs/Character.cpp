@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 13:53:35 by sleon             #+#    #+#             */
-/*   Updated: 2023/05/12 16:39:57 by sleon            ###   ########.fr       */
+/*   Updated: 2023/05/20 14:26:48 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,11 +88,13 @@ void	Character::unequip(int idx){
 	int	y = 0;
 	if (this->_inventory[idx])
 	{
+		std::cout<<"LA"<<std::endl;
 		for (int i = 0; i < 5; i++)
 			if (!this->_floor[i])
 			{
 				this->_floor[i] = this->_inventory[idx];
-				delete this->_inventory[idx];
+				this->_inventory[idx] = NULL;
+				std::cout<<"The materia has been droped on the floor."<<std::endl;
 				y = 1;
 			}
 		if (!y)

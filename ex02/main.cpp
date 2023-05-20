@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 13:45:10 by sleon             #+#    #+#             */
-/*   Updated: 2023/05/10 15:34:52 by sleon            ###   ########.fr       */
+/*   Updated: 2023/05/20 14:19:45 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	main( void )
 		else
 			animals[i] = new Cat();
 		std::cout << animals[i]->getType() << std::endl;
+		std::cout<<std::endl;
 	}
 	brain = animals[3]->getBrain();
 	brain->ideas[0] = "Manu n'est pas venu aujourd'hui ce loser";
@@ -43,6 +44,7 @@ int	main( void )
 
 	for (int i = 0; i < 8; i++)
 		delete animals[i];
+	std::cout<<std::endl;
 
 	Dog dog1;
 	Dog dog2;
