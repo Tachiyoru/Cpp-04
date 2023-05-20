@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 15:44:24 by sleon             #+#    #+#             */
-/*   Updated: 2023/05/12 16:33:18 by sleon            ###   ########.fr       */
+/*   Updated: 2023/05/20 15:07:37 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class ICharacter{
 		virtual void use(int idx, ICharacter& target) = 0;
 		//
 		virtual void		printInventory() const = 0;
+		virtual AMateria	*getFloor(int idx) const = 0;
 
 };
 

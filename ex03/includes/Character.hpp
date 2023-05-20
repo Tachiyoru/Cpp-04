@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 13:55:26 by sleon             #+#    #+#             */
-/*   Updated: 2023/05/12 14:49:19 by sleon            ###   ########.fr       */
+/*   Updated: 2023/05/20 15:07:39 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class Character : public ICharacter{
 		Character	&operator=(const Character &toCopy);
 		ICharacter	&operator=(const ICharacter &toCopy);
 
+		AMateria	*getFloor(int idx) const;
 		std::string	const &getName() const;
 		void		equip(AMateria* m);
 		void		unequip(int idx);
